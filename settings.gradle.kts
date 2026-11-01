@@ -11,4 +11,4 @@ plugins {
 }
 
 rootProject.name = "springboot-microservices"
-include("app")
+include("greeting-service")
