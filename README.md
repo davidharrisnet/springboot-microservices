@@ -16,17 +16,17 @@ The result is the same as a Spring Initializr project with these settings:
 
 Prerequisites: Java 21 and any recent Gradle (these steps used Gradle 9.4.1). Gradle is only used once, in step 1, to generate the wrapper; every later command uses `./gradlew`. The build downloads its plugins and libraries from the Gradle Plugin Portal and Maven Central.
 
-Run all commands from the repository root.
+The project lives in the `microservice/` directory. Step 1 creates it; every later command runs from inside it.
 
 ## Step 1: Generate a basic Gradle build
 
 ```bash
+mkdir microservice
+cd microservice
 gradle init --type basic --dsl kotlin --project-name service --no-incubating
 ```
 
-`--type basic` creates an empty build with a Gradle wrapper, without the sample `app` subproject that `--type java-application` adds.
-
-If the directory already has files in it, `gradle init` asks whether to continue. Answer yes. Existing files such as `README.md`, `LICENSE` and `.gitignore` are left alone.
+`--type basic` creates an empty build with a Gradle wrapper, without the sample `app` subproject that `--type java-application` adds. Running it in a new, empty directory means `gradle init` has nothing to overwrite and doesn't ask.
 
 It generates:
 
@@ -37,6 +37,7 @@ It generates:
 | `build.gradle.kts` | A comment only |
 | `gradle.properties` | `org.gradle.configuration-cache=true` |
 | `gradle/libs.versions.toml` | An empty version catalog |
+| `.gitignore` | `.gradle`, `build` and `.kotlin` |
 | `.gitattributes` | Line endings for `gradlew` and `*.bat` |
 
 ## Step 2: Remove files a Spring Boot project doesn't use

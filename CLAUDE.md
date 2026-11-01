@@ -9,7 +9,7 @@ Commit `f8fcec3` ("empty project") removed the whole build, leaving only `README
 1. The user runs `gradle init` to generate a plain Gradle project.
 2. The project is then changed into a Spring Boot microservice.
 
-`README.md` documents every step of this process. Whenever you help with a step (a command run, a file added or changed), add it to `README.md` in order, with the exact commands and file contents, so the README can be followed from scratch. Don't jump ahead and do several steps at once unless the user asks.
+The project lives in `microservice/` (generated there by `gradle init` so nothing at the repo root is overwritten). `README.md` at the repo root is the guide, separate from the project, and documents every step of this process. The user runs all commands themselves; write the step, then read the result. Whenever you help with a step (a command run, a file added or changed), add it to `README.md` in order, with the exact commands and file contents, so the README can be followed from scratch. Don't jump ahead and do several steps at once unless the user asks.
 
 ## Earlier setup (for reference)
 
